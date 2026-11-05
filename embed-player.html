@@ -7,22 +7,26 @@
   <title>91.3 Ayclt FM TV — Live Player</title>
   <style>
     * { box-sizing: border-box; }
-    body {
+    html, body {
+      width: 100%;
+      height: 100%;
       margin: 0;
-      padding: 20px;
+      padding: 0;
+      overflow: hidden;
       background: #080808;
       color: #fff;
       font-family: Arial, Helvetica, sans-serif;
     }
     #ayclt-tv-player {
       width: 100%;
-      max-width: 1100px;
+      height: 100vh;
+      height: 100dvh;
+      max-width: 1400px;
       margin: 0 auto;
+      display: flex;
+      flex-direction: column;
       background: #101010;
-      border: 1px solid #292929;
-      border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 8px 30px rgba(0,0,0,.4);
     }
     .tv-header {
       display: flex;
@@ -36,7 +40,13 @@
     .tv-brand h1 { margin: 0; font-size: 23px; font-weight: 800; }
     .tv-brand p { margin: 6px 0 0; color: #aaa; font-size: 11px; letter-spacing: 2px; }
     .tv-status { color: #ff4055; font-size: 12px; font-weight: bold; white-space: nowrap; }
-    .tv-screen { width: 100%; aspect-ratio: 16 / 9; background: #000; }
+    .tv-screen {
+      width: 100%;
+      flex: 1 1 auto;
+      min-height: 0;
+      background: #000;
+      overflow: hidden;
+    }
     .tv-screen video {
       display: block;
       width: 100%;
@@ -45,12 +55,21 @@
       background: #000;
       object-fit: contain;
     }
-    .tv-controls { display: block; padding: 20px; }
-    .tv-controls h2 { margin: 0 0 15px; font-size: 13px; letter-spacing: 1.5px; color: #aaa; }
+    .tv-controls {
+      display: block;
+      flex: 0 0 auto;
+      padding: 10px 16px;
+    }
+    .tv-controls h2 {
+      margin: 0 0 8px;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      color: #aaa;
+    }
     .tv-buttons {
       display: grid !important;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 8px;
       width: 100%;
     }
     .tv-buttons button {
@@ -58,8 +77,8 @@
       visibility: visible !important;
       opacity: 1 !important;
       min-width: 0;
-      min-height: 58px;
-      padding: 12px;
+      min-height: 42px;
+      padding: 7px 5px;
       background: #242424;
       border: 1px solid #555;
       border-radius: 7px;
@@ -85,22 +104,37 @@
     .tv-buttons button.active span { color: #fff; }
     .tv-footer {
       display: flex;
+      flex: 0 0 auto;
       justify-content: space-between;
       align-items: center;
       gap: 10px;
-      padding: 15px 20px;
+      padding: 9px 16px;
       background: #080808;
       border-top: 1px solid #292929;
       font-size: 11px;
       color: #888;
     }
     .tv-footer strong { color: #fff; }
-    @media (max-width: 650px) {
-      body { padding: 8px; }
-      .tv-header { padding: 15px; }
+    @media (max-width: 700px) {
+      .tv-header { padding: 10px 12px; }
       .tv-brand h1 { font-size: 18px; }
-      .tv-buttons { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .tv-controls { padding: 15px; }
+      .tv-brand p { font-size: 9px; letter-spacing: 1px; }
+      .tv-buttons { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+      .tv-controls { padding: 7px 10px; }
+      .tv-controls h2 { margin-bottom: 6px; font-size: 10px; }
+      .tv-buttons button { min-height: 34px; padding: 5px 4px; font-size: 11px; }
+      .tv-buttons button span { display: inline; margin: 0 5px 0 0; }
+      .tv-footer { padding: 7px 10px; }
+    }
+    @media (max-height: 560px) {
+      .tv-header { padding: 6px 12px; }
+      .tv-brand p { display: none; }
+      .tv-controls { padding: 5px 10px; }
+      .tv-controls h2 { margin-bottom: 4px; }
+      .tv-buttons { gap: 4px; }
+      .tv-buttons button { min-height: 28px; padding: 4px; }
+      .tv-buttons button span { display: inline; margin: 0 4px 0 0; }
+      .tv-footer { padding: 5px 10px; }
     }
     @media (max-width: 380px) {
       .tv-status { font-size: 9px; }
