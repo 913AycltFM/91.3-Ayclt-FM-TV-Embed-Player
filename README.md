@@ -2,6 +2,12 @@
 
 A responsive, branded web player for watching the 91.3 Ayclt FM television channels from a website. The player supports five live HLS feeds, channel switching, standard video controls, and fullscreen playback.
 
+## Live player
+
+<https://913aycltfm.github.io/91.3-Ayclt-FM-TV-Embed-Player/embed-player.html>
+
+The player repository is public, and the site is published with GitHub Pages.
+
 ## TV channels
 
 | Channel | Description |
@@ -23,21 +29,9 @@ The channel streams are configured in `embed-player.html`.
 - Native HLS fallback for compatible browsers, including Safari
 - 91.3 Ayclt FM dark theme with red accents
 
-## Publish with GitHub Pages
-
-1. Open this repository on GitHub.
-2. Go to **Settings → Pages**.
-3. Under **Build and deployment**, select **Deploy from a branch**.
-4. Choose the `main` branch and the `/ (root)` folder, then save.
-5. After GitHub Pages finishes publishing, the player page should be available at:
-
-   `https://913aycltfm.github.io/91.3-Ayclt-FM-TV-Embed-Player/embed-player.html`
-
-GitHub Pages must be enabled for this address to work.
-
 ## Embed the player on a website
 
-After GitHub Pages is publishing the page, add this iframe where you want the player to appear:
+Copy this iframe into the HTML of the website where you want the player to appear:
 
 ```html
 <iframe
@@ -54,6 +48,20 @@ After GitHub Pages is publishing the page, add this iframe where you want the pl
 
 Adjust the iframe height to fit your website layout. The player itself is responsive; the iframe height is controlled by the website embedding it.
 
+## GitHub Pages deployment
+
+This repository is published using GitHub Pages.
+
+To review or change the publishing configuration:
+
+1. Open **Settings → Pages**.
+2. Under **Build and deployment**, check that **Deploy from a branch** is selected.
+3. Confirm the `main` branch and `/(root)` folder are selected.
+
+The public player address is:
+
+`https://913aycltfm.github.io/91.3-Ayclt-FM-TV-Embed-Player/embed-player.html`
+
 ## Use the player code directly
 
 If you are adding the player to a page you control, you can copy the contents of `embed-player.html` into the page's HTML. Keep the HLS.js script include and the player script so channel switching works.
@@ -64,7 +72,7 @@ If you are adding the player to a page you control, you can copy the contents of
 - **The player loads but video does not start:** Press the video play button. Browsers commonly block autoplay with sound until a visitor interacts with the page.
 - **HLS is unsupported:** Use a modern browser. The player uses HLS.js where Media Source Extensions are available and falls back to native HLS where supported.
 - **Fullscreen does not work inside an embed:** Make sure the iframe includes both `allow="fullscreen"` and `allowfullscreen`.
-- **The page cannot be found:** Verify that GitHub Pages is enabled and has completed deployment.
+- **The page cannot be found:** Check the repository's GitHub Pages deployment status under **Actions** or **Settings → Pages**.
 
 Live stream availability depends on the 91.3 Ayclt FM TV streaming service and is not guaranteed by this repository.
 
