@@ -40,6 +40,15 @@ Add this iframe to the HTML of your website:
 
 Change the iframe height to suit your page layout. The player adjusts to the available width; the website controls the iframe's height.
 
+## Fullscreen playback
+
+The player includes native HTML5 video controls. To allow the video to enter fullscreen when embedded on another website, the embedding iframe must include both:
+
+- `allow="autoplay; fullscreen; picture-in-picture"`
+- `allowfullscreen`
+
+Use the complete iframe example above rather than removing these attributes. If fullscreen still does not work, check whether the website builder or the page's own embedding settings restrict fullscreen permissions. Also test the standalone [TV Player](https://913aycltfm.github.io/91.3-Ayclt-FM-TV-Embed-Player/embed-player.html) directly. If fullscreen works on the standalone page but not inside the website, the restriction is likely in the website's iframe/embed configuration.
+
 ## Player features
 
 - Six selectable live HLS channels, including HD4
@@ -76,7 +85,7 @@ If the player does not show a recent update, check the repository's **Actions** 
 - **Black screen or playback error:** Check that the selected HLS stream is online and reachable.
 - **Player loads but video does not start:** Press Play. Browsers may block autoplay with sound until the visitor interacts with the page.
 - **Playback is unsupported:** Try a current version of Chrome, Firefox, or Safari.
-- **Fullscreen does not work in an embed:** Make sure the iframe includes `allow="autoplay; fullscreen; picture-in-picture"` and `allowfullscreen`.
+- **Fullscreen does not work in an embed:** Confirm the iframe has both fullscreen permissions shown in the [Fullscreen playback](#fullscreen-playback) section. The website builder may also restrict iframe fullscreen.
 - **Player page is missing or outdated:** Check the GitHub Pages deployment status and refresh the page after deployment completes.
 
 Stream availability depends on the 91.3 Ayclt FM TV streaming service. This repository hosts the player and does not guarantee that a live feed is always online.
