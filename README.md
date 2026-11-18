@@ -1,38 +1,29 @@
 # 91.3 Ayclt FM TV — Embed Player
 
-A responsive, branded web player for watching the 91.3 Ayclt FM television channels from a website. The player supports six live HLS feeds, channel switching, standard video controls, and fullscreen playback.
+A responsive, branded web player for watching the 91.3 Ayclt FM television lineup. It provides six selectable live HLS feeds, channel switching, video controls, and fullscreen playback.
 
-## Live player
+## Watch live
 
-<https://913aycltfm.github.io/91.3-Ayclt-FM-TV-Embed-Player/embed-player.html>
+**[Open the 91.3 Ayclt FM TV Player](https://913aycltfm.github.io/91.3-Ayclt-FM-TV-Embed-Player/embed-player.html)**
 
-The player repository is public, and the site is published with GitHub Pages.
+The player is hosted with GitHub Pages. Use this as the public player link.
 
-## TV channels
+## Channel lineup
 
-| Channel | Description |
+| Channel | Name |
 | --- | --- |
 | 01 | 91.3 Ayclt FM |
 | 02 | 91.3 Ayclt FM HD2 |
 | 03 | 91.3 Ayclt FM HD3 |
 | 04 | 91.3 Ayclt FM HD4 |
-| 05 | Live Studio Cam |
-| 06 | Mobile Studio Cam |
+| 05 | 91.3 Ayclt FM Live Studio Cam |
+| 06 | 91.3 Ayclt FM Mobile Studio Cam |
 
-The channel streams are configured in `embed-player.html`.
+All six channel entries are configured in `embed-player.html`.
 
-## Player features
+## Embed on a website
 
-- Six selectable live HLS channels
-- Responsive layout for desktop, tablet, and mobile
-- HTML5 video controls, including fullscreen where supported
-- HLS.js playback for browsers that do not support HLS natively
-- Native HLS fallback for compatible browsers, including Safari
-- 91.3 Ayclt FM dark theme with red accents
-
-## Embed the player on a website
-
-Copy this iframe into the HTML of the website where you want the player to appear:
+Add this iframe to the HTML of your website:
 
 ```html
 <iframe
@@ -47,39 +38,60 @@ Copy this iframe into the HTML of the website where you want the player to appea
 </iframe>
 ```
 
-Adjust the iframe height to fit your website layout. The player itself is responsive; the iframe height is controlled by the website embedding it.
+Change the iframe height to suit your page layout. The player adjusts to the available width; the website controls the iframe's height.
 
-## GitHub Pages deployment
+## Player features
 
-This repository is published using GitHub Pages.
+- Six selectable live HLS channels, including HD4
+- Responsive layout for desktop, tablet, and mobile
+- HTML5 video controls and fullscreen playback where supported
+- HLS.js playback in browsers that support Media Source Extensions
+- Native HLS playback fallback for compatible browsers, including Safari
+- 91.3 Ayclt FM dark theme with red accents
 
-To review or change the publishing configuration:
+## Updating channel streams
+
+1. Open `embed-player.html`.
+2. Find the channel configuration in the player code.
+3. Update the HLS stream URL for the channel you want to change.
+4. Commit the change to the `main` branch.
+5. Allow GitHub Pages to publish the update, then reload the live player.
+
+Keep each channel's name, button, and stream URL matched. Use the current HLS playlist URL provided by the TV streaming service.
+
+## GitHub Pages
+
+The site is published through GitHub Pages from this repository.
+
+To review the publishing settings:
 
 1. Open **Settings → Pages**.
-2. Under **Build and deployment**, check that **Deploy from a branch** is selected.
+2. Under **Build and deployment**, confirm **Deploy from a branch**.
 3. Confirm the `main` branch and `/(root)` folder are selected.
 
-The public player address is:
+If the player does not show a recent update, check the repository's **Actions** tab and **Settings → Pages** for deployment status.
 
-`https://913aycltfm.github.io/91.3-Ayclt-FM-TV-Embed-Player/embed-player.html`
+## Troubleshooting
 
-## Use the player code directly
+- **Black screen or playback error:** Check that the selected HLS stream is online and reachable.
+- **Player loads but video does not start:** Press Play. Browsers may block autoplay with sound until the visitor interacts with the page.
+- **Playback is unsupported:** Try a current version of Chrome, Firefox, or Safari.
+- **Fullscreen does not work in an embed:** Make sure the iframe includes `allow="autoplay; fullscreen; picture-in-picture"` and `allowfullscreen`.
+- **Player page is missing or outdated:** Check the GitHub Pages deployment status and refresh the page after deployment completes.
 
-If you are adding the player to a page you control, you can copy the contents of `embed-player.html` into the page's HTML. Keep the HLS.js script include and the player script so channel switching works.
+Stream availability depends on the 91.3 Ayclt FM TV streaming service. This repository hosts the player and does not guarantee that a live feed is always online.
 
-## Playback notes and troubleshooting
+## Repository files
 
-- **A black screen or playback error:** Confirm that the selected live stream is online and reachable.
-- **The player loads but video does not start:** Press the video play button. Browsers commonly block autoplay with sound until a visitor interacts with the page.
-- **HLS is unsupported:** Use a modern browser. The player uses HLS.js where Media Source Extensions are available and falls back to native HLS where supported.
-- **Fullscreen does not work inside an embed:** Make sure the iframe includes both `allow="fullscreen"` and `allowfullscreen`.
-- **The page cannot be found:** Check the repository's GitHub Pages deployment status under **Actions** or **Settings → Pages**.
+- `embed-player.html` — the current standalone six-channel player and GitHub Pages entry point.
+- `README.md` — project documentation.
 
-Live stream availability depends on the 91.3 Ayclt FM TV streaming service and is not guaranteed by this repository.
+The obsolete `embed-player-2.html` file has been removed. Use `embed-player.html` for the live player and website embeds.
 
-## Repository
+## Links
 
-[View the source code](https://github.com/913AycltFM/91.3-Ayclt-FM-TV-Embed-Player)
+- [Live TV Player](https://913aycltfm.github.io/91.3-Ayclt-FM-TV-Embed-Player/embed-player.html)
+- [GitHub Repository](https://github.com/913AycltFM/91.3-Ayclt-FM-TV-Embed-Player)
 
 ---
 
