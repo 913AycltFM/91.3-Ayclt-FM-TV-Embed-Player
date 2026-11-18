@@ -1,6 +1,6 @@
 # 91.3 Ayclt FM TV — Embed Player
 
-A responsive, branded web player for watching the 91.3 Ayclt FM television channels from a website. The player supports five live HLS feeds, channel switching, standard video controls, and fullscreen playback.
+A responsive, branded web player for watching the 91.3 Ayclt FM television channels from a website. The player supports six live HLS feeds, channel switching, standard video controls, and fullscreen playback.
 
 ## Live player
 
@@ -15,14 +15,15 @@ The player repository is public, and the site is published with GitHub Pages.
 | 01 | 91.3 Ayclt FM |
 | 02 | 91.3 Ayclt FM HD2 |
 | 03 | 91.3 Ayclt FM HD3 |
-| 04 | Live Studio Cam |
-| 05 | Mobile Studio Cam |
+| 04 | 91.3 Ayclt FM HD4 |
+| 05 | Live Studio Cam |
+| 06 | Mobile Studio Cam |
 
 The channel streams are configured in `embed-player.html`.
 
 ## Player features
 
-- Five selectable live HLS channels
+- Six selectable live HLS channels
 - Responsive layout for desktop, tablet, and mobile
 - HTML5 video controls, including fullscreen where supported
 - HLS.js playback for browsers that do not support HLS natively
