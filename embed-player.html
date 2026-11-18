@@ -39,13 +39,7 @@
     }
     .tv-brand h1 { margin: 0; font-size: 23px; font-weight: 800; }
     .tv-brand p { margin: 6px 0 0; color: #aaa; font-size: 11px; letter-spacing: 2px; }
-    .tv-header-actions { display: flex; align-items: center; gap: 12px; }
     .tv-status { color: #ff4055; font-size: 12px; font-weight: bold; white-space: nowrap; }
-    .fullscreen-button {
-      border: 1px solid #666; border-radius: 6px; background: #242424; color: #fff;
-      padding: 9px 12px; font: bold 12px Arial, Helvetica, sans-serif; cursor: pointer;
-    }
-    .fullscreen-button:hover, .fullscreen-button:focus-visible { border-color: #e31b35; outline: 2px solid #e31b35; outline-offset: 2px; }
     .tv-screen {
       width: 100%;
       flex: 1 1 auto;
@@ -158,10 +152,7 @@
         <h1>91.3 Ayclt FM TV</h1>
         <p>LIVE TELEVISION NETWORK</p>
       </div>
-      <div class="tv-header-actions">
-        <span class="tv-status">● TV PLAYER</span>
-        <button class="fullscreen-button" id="tv-fullscreen" type="button" aria-label="Enter video fullscreen">⛶ Fullscreen</button>
-      </div>
+      <span class="tv-status">● TV PLAYER</span>
     </header>
 
     <section class="tv-screen" aria-label="Live television">
@@ -200,30 +191,7 @@
 
       const video = document.getElementById("tv-frame");
       const buttons = document.querySelectorAll(".tv-buttons button");
-      const fullscreenButton = document.getElementById("tv-fullscreen");
       let hls = null;
-
-      async function toggleFullscreen() {
-        try {
-          if (document.fullscreenElement) {
-            await document.exitFullscreen();
-            return;
-          }
-          if (video.requestFullscreen) {
-            await video.requestFullscreen();
-          } else if (video.webkitEnterFullscreen) {
-            video.webkitEnterFullscreen();
-          } else {
-            alert("Fullscreen is not supported by this browser.");
-          }
-        } catch (error) {
-          alert("The website embedding this player is blocking fullscreen. Its embed frame must allow fullscreen (allowfullscreen / allow=\"fullscreen\").");
-        }
-      }
-
-      if (fullscreenButton) {
-        fullscreenButton.addEventListener("click", toggleFullscreen);
-      }
 
       function selectChannel(index) {
         if (!video || !channels[index]) return;
