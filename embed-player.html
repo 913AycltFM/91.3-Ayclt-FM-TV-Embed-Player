@@ -68,7 +68,7 @@
     }
     .tv-buttons {
       display: grid !important;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
+      grid-template-columns: repeat(6, minmax(0, 1fr));
       gap: 8px;
       width: 100%;
     }
@@ -115,6 +115,9 @@
       color: #888;
     }
     .tv-footer strong { color: #fff; }
+    @media (max-width: 900px) {
+      .tv-buttons { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
     @media (max-width: 700px) {
       .tv-header { padding: 10px 12px; }
       .tv-brand h1 { font-size: 18px; }
@@ -159,11 +162,12 @@
     <section class="tv-controls" aria-label="Channel selection">
       <h2>SELECT A CHANNEL</h2>
       <div class="tv-buttons">
-        <button class="active" type="button" data-channel="0"><span>01</span>91.3 Ayclt FM</button>
-        <button type="button" data-channel="1"><span>02</span>91.3 Ayclt FM HD2</button>
-        <button type="button" data-channel="2"><span>03</span>91.3 Ayclt FM HD3</button>
-        <button type="button" data-channel="3"><span>04</span>Live Studio Cam</button>
-        <button type="button" data-channel="4"><span>05</span>Mobile Studio Cam</button>
+        <button class="active" type="button" data-channel="0" aria-pressed="true"><span>01</span>91.3 Ayclt FM</button>
+        <button type="button" data-channel="1" aria-pressed="false"><span>02</span>91.3 Ayclt FM HD2</button>
+        <button type="button" data-channel="2" aria-pressed="false"><span>03</span>91.3 Ayclt FM HD3</button>
+        <button type="button" data-channel="3" aria-pressed="false"><span>04</span>91.3 Ayclt FM HD4</button>
+        <button type="button" data-channel="4" aria-pressed="false"><span>05</span>Live Studio Cam</button>
+        <button type="button" data-channel="5" aria-pressed="false"><span>06</span>Mobile Studio Cam</button>
       </div>
     </section>
 
@@ -180,6 +184,7 @@
         "https://tv.913aycltfm.com/memfs/b4e092fb-a5ac-4229-963a-fd7d872a6060.m3u8",
         "https://tv.913aycltfm.com/memfs/b502bd6f-86eb-4ca0-91c0-f09fb6a8f76e.m3u8",
         "https://tv.913aycltfm.com/memfs/c421623b-6171-4fc8-8514-86993233d910.m3u8",
+        "https://tv.913aycltfm.com/memfs/d70805aa-1e82-45c4-801d-5a59117f3b00.m3u8",
         "https://tv.913aycltfm.com/memfs/02f36ef2-64c7-446c-a5c8-ca2fca15d02e.m3u8",
         "https://tv.913aycltfm.com/memfs/034825aa-0374-40a9-8ebb-5cf4d3b05dfe.m3u8"
       ];
